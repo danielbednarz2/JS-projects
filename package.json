@@ -1,0 +1,18 @@
+{
+  "name": "JS-projects",
+  "version": "1.0.0",
+  "decription": "Javascript Projects",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Daniel Walker <danielbednarz2@gmail.com> (https://danielwalker.dev)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielbednarz2/JS-projects.git"
+  },
+  "description": "A place to host small javascript projects",
+  "bugs": {
+    "url": "https://github.com/danielbednarz2/JS-projects/issues"
+  },
+  "homepage": "https://github.com/danielbednarz2/JS-projects#readme"
+}

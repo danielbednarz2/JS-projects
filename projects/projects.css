@@ -1,0 +1,77 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.5;
+    width: 90%;
+    margin: auto;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    cursor: pointer;
+    color: gray;
+}
+
+header {
+    display: flex;
+    margin: auto;
+}
+
+header nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+nav h1 {
+    width: 25%;
+}
+
+nav ul {
+    display: flex;
+    width: 25%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-wrapper {
+    display: flex;
+}
+
+.calculator-project {
+    width: fit-content;
+    height: auto;
+    padding: 1rem;
+    border: 5px solid black;
+}
