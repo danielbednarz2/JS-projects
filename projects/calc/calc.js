@@ -29,21 +29,46 @@ const allNums = [zero, one, two, three, four, five, six, seven, eight, nine];
 const allOperators = [additionOperator, multiplicationOperator, subtractionOperator, divisionOperator];
 
 let current = 0;
+let previous = 0;
 
 allNums.forEach((i) => {
     i.addEventListener("click", () => {
         current = parseInt(i.childNodes[1].childNodes[0].nodeValue);
-        totalNum.innerHTML = current;
+        if (previous != 0) {
+            totalNum.innerHTML = previous + current;
+            current = parseInt(totalNum.innerHTML);
+        } else {
+            totalNum.innerHTML = current;
+        }
     })
 })
 
 allOperators.forEach((i) => {
     i.addEventListener("click", () => {
-        console.log(i.childNodes[1].childNodes[0].nodeValue)
+        let operand = i.childNodes[1].childNodes[0].nodeValue;
+        switch(operand) {
+            case "+":
+                totalNum.innerHTML = previous + current;
+                break;
+            case "-":
+                totalNum.innerHTML = previous - current;
+                break;
+            case "*":
+                totalNum.innerHTML = previous * current;
+                break;
+            case "/":
+                totalNum.innerHTML = previous / current;
+                break;
+            default:
+                console.log("error");
+        }
+        previous = current;
+        current = 0;
     })
 })
 
 allClear.addEventListener("click", () => {
+    previous = 0;
     current = 0;
     totalNum.innerHTML = current;
 })
