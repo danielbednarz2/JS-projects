@@ -30,15 +30,18 @@ const allOperators = [additionOperator, multiplicationOperator, subtractionOpera
 
 let current = 0;
 let previous = 0;
+let sym = '';
 
 allNums.forEach((i) => {
     i.addEventListener("click", () => {
         current = parseInt(i.childNodes[1].childNodes[0].nodeValue);
-        if (previous != 0) {
-            totalNum.innerHTML = previous + current;
-            current = parseInt(totalNum.innerHTML);
-        } else {
+        if (sym !== '') {
             totalNum.innerHTML = current;
+            sym = '';
+        } else if (parseInt(totalNum.innerHTML) == 0) {
+                totalNum.innerHTML = current;
+        } else {
+                totalNum.innerHTML = totalNum.innerHTML.concat(current);
         }
     })
 })
@@ -48,28 +51,36 @@ allOperators.forEach((i) => {
         let operand = i.childNodes[1].childNodes[0].nodeValue;
         switch(operand) {
             case "+":
-                totalNum.innerHTML = previous + current;
+                if (previous != 0) {
+                    totalNum.innerHTML = previous + parseInt(totalNum.innerHTML);
+                }
                 break;
             case "-":
-                totalNum.innerHTML = previous - current;
                 break;
             case "*":
-                totalNum.innerHTML = previous * current;
                 break;
             case "/":
-                totalNum.innerHTML = previous / current;
+                break;
+            case "=":
+                switch(operand) {
+                    case "+":
+                        totalNum.innerHTML = previous + parseInt(totalNum.innerHTML);
+                    default:
+                        break;
+                }
                 break;
             default:
-                console.log("error");
+                break;
         }
-        previous = current;
-        current = 0;
+        previous = parseInt(totalNum.innerHTML);
+        sym = operand;
     })
 })
 
 allClear.addEventListener("click", () => {
     previous = 0;
     current = 0;
+    sym = '';
     totalNum.innerHTML = current;
 })
 
