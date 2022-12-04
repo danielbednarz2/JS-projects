@@ -42,39 +42,3 @@ a:hover {
     cursor: pointer;
     color: gray;
 }
-
-header {
-    display: flex;
-    margin: auto;
-}
-
-header nav {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-}
-
-nav h1 {
-    width: 25%;
-}
-
-nav ul {
-    display: flex;
-    width: 25%;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.project-wrapper {
-    display: flex;
-    align-items: flex-end;
-    gap: 10px;
-    flex: 1;
-}
-
-.project-wrapper a {
-    width: fit-content;
-    height: auto;
-    padding: 1rem;
-    border: 5px solid black;
-}
